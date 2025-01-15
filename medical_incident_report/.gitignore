@@ -10,3 +10,5 @@ __pycache__/
 # File bí mật
 *.env
 config.toml
+
+medical_incident_report/data
