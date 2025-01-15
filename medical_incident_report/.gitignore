@@ -1,0 +1,12 @@
+# Môi trường ảo
+env/
+.venv/
+
+# File tạm
+*.pyc
+*.pyo
+__pycache__/
+
+# File bí mật
+*.env
+config.toml
