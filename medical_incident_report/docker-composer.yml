@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  streamlit-app:
+    build: .
+    container_name: streamlit-container  # Tên container
+    ports:
+      - "8501:8501"  # Map cổng container sang máy chủ host
+    volumes:
+      - ./config.toml:/root/.streamlit/config.toml  # Mount file config.toml
+      - ./data:/app/data  # Mount thư mục data để lưu trữ báo cáo
+    environment:
+      - STREAMLIT_SERVER_PORT=8501  # Cấu hình môi trường cho Streamlit
+    restart: always  # Tự động khởi động lại nếu container bị dừng

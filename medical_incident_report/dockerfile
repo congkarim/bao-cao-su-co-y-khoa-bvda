@@ -1,0 +1,26 @@
+# Sử dụng Python làm image gốc
+FROM python:3.9-slim
+
+# Đặt thư mục làm việc trong container
+WORKDIR /app
+
+# Sao chép file yêu cầu thư viện vào container
+COPY requirements.txt .
+
+# Cài đặt các thư viện cần thiết
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Sao chép toàn bộ mã nguồn và file config vào container
+COPY . .
+
+# Tạo thư mục cấu hình Streamlit
+RUN mkdir -p ~/.streamlit
+
+# Sao chép file config.toml vào thư mục cấu hình của Streamlit
+COPY config.toml ~/.streamlit/config.toml
+
+# Mở cổng Streamlit mặc định
+EXPOSE 8501
+
+# Khởi chạy ứng dụng Streamlit
+CMD ["streamlit", "run", "app/incident_form.py", "--server.port=8501", "--server.address=127.0.0.1"]
