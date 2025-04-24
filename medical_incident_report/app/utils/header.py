@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Đường dẫn đến logo và favicon
-LOGO_PATH = "app/static/logo.png"  # Đường dẫn đến logo
+LOGO_PATH = "https://benhviendonganh.com/DATA/INFO/2023/2/17/benh-vien-da-khoa-dong-anh-9937e.png"  # Đường dẫn đến logo
 
 
 # Hiển thị logo và tiêu đề
